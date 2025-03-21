@@ -29,7 +29,7 @@ export function Flashcard({
           isFlipped ? "rotate-y-180" : "",
         )}
       >
-        <div className="absolute inset-0 backface-hidden rounded-lg border">
+        <div className="absolute inset-0 backface-hidden rounded-lg">
           <Card className="h-full flex items-center justify-center">
             <CardContent className="p-6 text-center">
               <h3 className="text-2xl font-bold mb-2">{front}</h3>
@@ -38,7 +38,7 @@ export function Flashcard({
           </Card>
         </div>
 
-        <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-lg border">
+        <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-lg">
           <Card className="h-full flex flex-col">
             <CardContent className="p-6 flex-1 flex flex-col justify-center">
               <h3 className="text-xl font-bold mb-4">{back}</h3>

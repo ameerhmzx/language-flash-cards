@@ -10,22 +10,24 @@ import { ChevronLeft, ChevronRight, RotateCcw, Volume2 } from "lucide-react";
 export function FlashcardDeck({
   language,
   onProgress,
+  cardsQuantity,
 }: {
   language: string;
   onProgress: (wordsLearned: number) => void;
+  cardsQuantity?: number;
 }) {
-  const [cards, setCards] = useState(() => getFlashcards(language));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [knownCards, setKnownCards] = useState<string[]>([]);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const cards = getFlashcards(language).slice(0, cardsQuantity);
 
   const currentCard = cards[currentIndex];
 
   useEffect(() => {
     // Reset state when language changes
-    setCards(getFlashcards(language));
+    // setCards(getFlashcards(language));
     setCurrentIndex(0);
     setIsFlipped(false);
     setCompleted(false);
