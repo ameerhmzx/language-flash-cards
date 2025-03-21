@@ -29,6 +29,7 @@ export default function Home() {
           onValueChange={handleLanguageChange}
         />
         <QuantitySelect
+          disabled={wordsLearned > 0}
           value={wordsQuantity.toString()}
           onValueChange={(val) => setWordsQuantity(parseInt(val, 10))}
         />
